@@ -41,7 +41,7 @@ def getLangtjernData(username,password,root,fromDate,toDate) :
         archived = False
         while not archived:
             resp = AquaMonitor.getArchive(token, id)
-            archived = resp["Archived"]
+            archived = resp.get("Archived")
         path = root + filename
         AquaMonitor.download(token, id, filename, path)
 

@@ -81,6 +81,7 @@ def getStations(token, projectId):
 def getArchive(token, id):
     header = {'Content-Type': 'application/json', 'Cookie':'aqua_key='+token+';'}
     archiveurl = host + 'AquaServices/files/archive/' + id
+    #print(token, id)
     req = urllib2.Request(archiveurl, None, headers=header)
     response = urllib2.urlopen(req)
     return json.loads(response.read())
